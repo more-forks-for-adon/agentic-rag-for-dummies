@@ -34,7 +34,7 @@
 </p>
 
 <p align="center">
-  <a href="https://colab.research.google.com/github/GiovanniPasq/agentic-rag-for-dummies/blob/main/Agentic_Rag_For_Dummies.ipynb">
+  <a href="https://colab.research.google.com/github/GiovanniPasq/agentic-rag-for-dummies/blob/main/notebooks/agentic_rag.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
   </a>
 </p>
@@ -177,7 +177,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
 
 ## Implementation
 
-Additional details, extended explanations, and Langfuse observability (LLM call tracing, tool usage, and graph execution tracking) are available in the **[notebook](Agentic_Rag_For_Dummies.ipynb)** and in the full project.
+Additional details, extended explanations, and Langfuse observability (LLM call tracing, tool usage, and graph execution tracking) are available in the **[notebook](notebooks/agentic_rag.ipynb)** and in the full project.
 
 | Step | Description |
 |------|-------------|
@@ -205,7 +205,7 @@ from langchain_qdrant.fastembed_sparse import FastEmbedSparse
 from qdrant_client import QdrantClient
 
 DOCS_DIR = "docs"  # Directory containing your pdf files
-MARKDOWN_DIR = "markdown" # Directory containing the pdfs converted to markdown
+MARKDOWN_DIR = "markdown_docs" # Directory containing the pdfs converted to markdown
 PARENT_STORE_PATH = "parent_store"  # Directory for parent chunk JSON files
 CHILD_COLLECTION = "document_child_chunks"
 
@@ -253,7 +253,7 @@ def ensure_collection(collection_name):
 
 ### Step 3: PDFs to Markdown
 
-Convert the PDFs to Markdown. For more details about other techniques use this companion [notebook](pdf_to_md.ipynb).
+Convert the PDFs to Markdown. For more details about other techniques use this companion [notebook](notebooks/pdf_to_markdown.ipynb).
 
 ```python
 import os
@@ -1104,7 +1104,7 @@ The architecture flow diagram can be viewed **[here](./assets/agentic_rag_workfl
 
 Build a Gradio interface with conversation persistence and human-in-the-loop support. For a complete end-to-end pipeline Gradio interface, including document ingestion, please refer to [project/README.md](./project/README.md).
 
-> **Note:** Full streaming support — including reasoning steps and tool calls visibility — is implemented in the [notebook](Agentic_Rag_For_Dummies.ipynb) and in the full [project](project/core/chat_interface.py). The example below is intentionally minimal — it shows the basic Gradio integration pattern only.
+> **Note:** Full streaming support — including reasoning steps and tool calls visibility — is implemented in the [notebook](notebooks/agentic_rag.ipynb) and in the full [project](project/core/chat_interface.py). The example below is intentionally minimal — it shows the basic Gradio integration pattern only.
 
 ```python
 import gradio as gr
